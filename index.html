@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature Flags Simples</title>
+    <style>
+        #boton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="boton">Haz click para cambiar color</button>
+
+    <script>
+        // Variable para simular si la Feature Flag está activada
+        let featureFlag = false; // Si está 'true', cambia el color del botón
+
+        function cambiarColor() {
+            const boton = document.getElementById("boton");
+            if (featureFlag) {
+                boton.style.backgroundColor = "green"; // Si la Feature Flag está activada
+            } else {
+                boton.style.backgroundColor = "red"; // Si la Feature Flag está desactivada
+            }
+        }
+
+        // Llamada a la función al hacer click
+        document.getElementById("boton").addEventListener("click", cambiarColor);
+    </script>
+</body>
+</html>
